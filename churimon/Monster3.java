@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Monster2 {
+public class Monster3 {
 
 	String character ;  // 種族
 	String trainer ;    // トレーナー
@@ -13,6 +13,95 @@ public class Monster2 {
 	int lv  ;           // レベル
 	int hp  ;           // HP
 	int atk ;           // 攻撃力
+	
+	public String getCharacter() {
+		return character;
+	}
+
+	public void setCharacter(String character) {
+		this.character = character;
+	}
+
+	public String getTrainer() {
+		return trainer;
+	}
+
+	public void setTrainer(String trainer) {
+		this.trainer = trainer;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getLv() {
+		return lv;
+	}
+
+	public void setLv(int lv) {
+		this.lv = lv;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public int getAtk() {
+		return atk;
+	}
+
+	public void setAtk(int atk) {
+		this.atk = atk;
+	}
+
+	public int getDef() {
+		return def;
+	}
+
+	public void setDef(int def) {
+		this.def = def;
+	}
+
+	public int getSpd() {
+		return spd;
+	}
+
+	public void setSpd(int spd) {
+		this.spd = spd;
+	}
+
+	public int getHpMax() {
+		return hpMax;
+	}
+
+	public void setHpMax(int hpMax) {
+		this.hpMax = hpMax;
+	}
+
+	public String getWazaNm() {
+		return wazaNm;
+	}
+
+	public void setWazaNm(String wazaNm) {
+		this.wazaNm = wazaNm;
+	}
+
+	public double getWazaDmRate() {
+		return wazaDmRate;
+	}
+
+	public void setWazaDmRate(double wazaDmRate) {
+		this.wazaDmRate = wazaDmRate;
+	}
+
 	int def ;           // 防御力 
 	int spd ;           // 素早さ
 	int hpMax ;         // HP初期値
@@ -21,7 +110,7 @@ public class Monster2 {
 
 	
 	// コンストラクタ１（引数なし）
-	Monster2() {
+	Monster3() {
 	
 		this.character = null ;
 		this.trainer   = null ;
@@ -38,7 +127,7 @@ public class Monster2 {
 	}
 	
 	// コンストラクタ２（引数２つ）
-	Monster2(String Tra , String Nm) {
+	Monster3(String Tra , String Nm) {
 		
 		this.character = null ;
 		this.trainer   = Tra ;    // トレーナー
@@ -55,7 +144,7 @@ public class Monster2 {
 	}
 	
 	// コンストラクタ３（引数３つ）
-	Monster2(String Tra , String Nm , int startLv) {
+	Monster3(String Tra , String Nm , int startLv) {
 		
 		this(Tra , Nm);          // コンストラクタ２を呼び出し初期化する
 		
@@ -75,7 +164,7 @@ public class Monster2 {
 	}
 	
     // レベルアップによるステータス上昇
-	void levelUp (int upwardLevel) {
+	public void levelUp (int upwardLevel) {
 		
 		this.lv    += (upwardLevel *  1) ;
 		this.hpMax += (upwardLevel * 30) ;
@@ -87,7 +176,7 @@ public class Monster2 {
 	}
 	
 	// 技に関する情報の設定（技の名前、ダメージ倍率）
-	void setWaza (String waza , String wazaRate) {
+	public void setWaza (String waza , String wazaRate) {
 
 		Pattern comparisonPattern = Pattern.compile("^[0-9]+\\.[0-9]$") ;
 		Matcher matcher = comparisonPattern.matcher(wazaRate) ;
@@ -106,7 +195,7 @@ public class Monster2 {
 	}
 
 	// ステータスの表示
-	String getStatus() {
+	public String getStatus() {
 
 		String monsterStatus ;
 		monsterStatus = '【' + this.name + "  Lv:" + this.lv + "  HP: " + this.hp + "/" + this.hpMax+ '】' ;
@@ -116,7 +205,7 @@ public class Monster2 {
 	}
 
 	// 相手に与えるダメージポイントの計算
-	int useWaza() {
+	public int useWaza() {
 
 		int damagePt ;    // 相手に与えるダメージポイント
 
@@ -134,7 +223,7 @@ public class Monster2 {
 	}
 	
 	// ダメージ減算率での実際に受けるダメージポイントの計算
-	int damageged(int damage) {
+	public int damaged(int damage) {
 		
 		int realDamagePt ;   // 実際に受けるダメージポイント
 		

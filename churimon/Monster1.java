@@ -20,24 +20,24 @@ public class Monster1 {
 	double wazaDmRate = 1.0 ;        // 技（ダメージ倍率）
 
     @Override
-	public String toString() {
-		return "Monster1 [character=" + character + ", trainer=" + trainer + ", name=" + name + ", lv=" + lv + ", hp="
-				+ hp + ", atk=" + atk + ", def=" + def + ", spd=" + spd + ", hpMax=" + hpMax + ", wazaNm=" + wazaNm
-				+ ", wazaDmRate=" + wazaDmRate + "]";
-	}
-	
+    public String toString() {
+    	return "Monster1 [character=" + character + ", trainer=" + trainer + ", name=" + name + ", lv=" + lv + ", hp="
+    			+ hp + ", atk=" + atk + ", def=" + def + ", spd=" + spd + ", hpMax=" + hpMax + ", wazaNm=" + wazaNm
+    			+ ", wazaDmRate=" + wazaDmRate + "]";
+    }
+
     // レベルアップによるステータス上昇
-	void levelUp (int upwardLevel) {
-		
-		this.lv    += (upwardLevel * 1 ) ;
-		this.hpMax += (upwardLevel * 30) ;
-		this.atk   += (upwardLevel * 5 ) ;
-		this.def   += (upwardLevel * 5 ) ;
-		this.spd   += (upwardLevel * 5 ) ;
-		this.hp    += hpMax ;
-		
-	}
-	
+    void levelUp (int upwardLevel) {
+
+    	this.lv    += (upwardLevel * 1 ) ;
+    	this.hpMax += (upwardLevel * 30) ;
+    	this.atk   += (upwardLevel * 5 ) ;
+    	this.def   += (upwardLevel * 5 ) ;
+    	this.spd   += (upwardLevel * 5 ) ;
+    	this.hp    =  hpMax ;
+
+    }
+
 	// 技に関する情報の設定（技の名前、ダメージ倍率）
 	void setWaza (String waza , String wazaRate) {
 
